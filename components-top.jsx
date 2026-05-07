@@ -1,7 +1,7 @@
 /* Hero (scattered scrapbook), Marquee, About, Stack, Sticker drag */
 
 const TYPING_LINES = [
-  { c: "whoami", out: "Sr. Software Engineer · 4 yrs · ASP.NET Core · React.js" },
+  { c: "whoami", out: "Full Stack Engineer · 4 yrs · ASP.NET Core · React.js" },
   { c: "cat skills", out: ".NET Core · React.js · Docker · Azure DevOps · CQRS" },
   { c: "git log -1", out: "feat(cart-sync): Amazon SP-API + Shopify GraphQL sync" },
   { c: "echo $TAGLINE", out: "I ship clean code, not just commits." },
@@ -70,7 +70,7 @@ function MiniTerm() {
       setHistory([]);
       return;
     } else if (c === "whoami") {
-      out = "Sr. Software Engineer · 4 yrs · ASP.NET Core · React.js";
+      out = "Full Stack Engineer · 4 yrs · ASP.NET Core · React.js";
       cls = "ok";
     } else if (c === "") {
       return;
@@ -281,7 +281,7 @@ function Vinyl() {
     // expose global music control for MiniTerm commands
     window.__musicControl = {
       pause: () => { audio.pause(); setPlaying(false); },
-      play: () => { audio.play().then(() => setPlaying(true)).catch(() => {}); },
+      play: () => { audio.play().then(() => setPlaying(true)).catch(() => { }); },
       isPlaying: () => !audio.paused,
     };
 
@@ -292,7 +292,7 @@ function Vinyl() {
       }).catch(() => {
         // blocked by autoplay policy — play on first user interaction
         const resumeOnClick = () => {
-          audio.play().then(() => setPlaying(true)).catch(() => {});
+          audio.play().then(() => setPlaying(true)).catch(() => { });
           document.removeEventListener("click", resumeOnClick);
           document.removeEventListener("touchstart", resumeOnClick);
         };
@@ -315,7 +315,7 @@ function Vinyl() {
     if (playing) {
       audio.pause();
     } else {
-      audio.play().catch(() => {});
+      audio.play().catch(() => { });
     }
     setPlaying(!playing);
   };

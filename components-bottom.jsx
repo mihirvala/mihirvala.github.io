@@ -98,7 +98,7 @@ function Polaroid({ p, flipped, onClick }) {
         <ul>
           {p.bullets.map((b, i) => <li key={i}>{b}</li>)}
         </ul>
-        <div style={{marginTop: 12, fontSize: 11, color: "var(--ink-soft)"}}>
+        <div style={{ marginTop: 12, fontSize: 11, color: "var(--ink-soft)" }}>
           // tap again to flip back
         </div>
       </div>
@@ -129,7 +129,7 @@ function Projects() {
                 key={p.id}
                 p={p}
                 flipped={!!flipped[p.id]}
-                onClick={() => setFlipped({...flipped, [p.id]: !flipped[p.id]})}
+                onClick={() => setFlipped({ ...flipped, [p.id]: !flipped[p.id] })}
               />
             ))}
           </div>
@@ -194,7 +194,7 @@ function Experience() {
           <h2>git log --all</h2>
           <span className="gujarati">// experience timeline</span>
         </div>
-        <div className="timeline" style={{marginLeft: 130}}>
+        <div className="timeline" style={{ marginLeft: 130 }}>
           {JOBS.map((j, i) => (
             <div className={"timeline-item" + (j.now ? " now" : "")} key={i}>
               <span className="git-log">{j.sha}</span>
@@ -234,7 +234,7 @@ const HELP = [
 const COMMANDS = {
   about: () => [
     "Mihir Vala · Gandhinagar, Gujarat",
-    "Sr. Software Engineer @ Tech Ahir Pvt Ltd",
+    "Full Stack Engineer @ Tech Ahir Pvt Ltd",
     "4 years building scalable .NET Core APIs & React.js frontends.",
     "Likes: clean code, CI/CD, API integrations (Amazon, Shopify).",
     "Dislikes: 100-line if-else chains.",
@@ -373,9 +373,9 @@ function LiveTerminal() {
       <div className="window-bar">
         <div className="lights"><span className="light"></span><span className="light y"></span><span className="light g"></span></div>
         <div className="title">mihir-shell — interactive · type `help`</div>
-        <div style={{width: 36}}></div>
+        <div style={{ width: 36 }}></div>
       </div>
-      <div className="live-term-body" ref={bodyRef} style={matrix ? {background: "#000", color: "#3fb950", filter: "hue-rotate(0deg)"} : {}}>
+      <div className="live-term-body" ref={bodyRef} style={matrix ? { background: "#000", color: "#3fb950", filter: "hue-rotate(0deg)" } : {}}>
         {history.map((h, i) => (
           h.type === "cmd" ? (
             <div className="prompt-line" key={i}>
@@ -383,12 +383,12 @@ function LiveTerminal() {
               <span className="cmd">{h.text}</span>
             </div>
           ) : (
-            <div className="out" key={i} style={{whiteSpace: "pre"}}>{h.text}</div>
+            <div className="out" key={i} style={{ whiteSpace: "pre" }}>{h.text}</div>
           )
         ))}
         <div className="prompt-line">
           <span className="prompt"><span>mihir</span><span className="at">@</span><span>shell</span> <span className="path">~</span> <span className="arrow">$</span></span>
-          <div className="live-term-input" style={{flex: 1}}>
+          <div className="live-term-input" style={{ flex: 1 }}>
             <input
               ref={inputRef}
               value={input}
@@ -403,7 +403,7 @@ function LiveTerminal() {
         </div>
       </div>
       <div className="helper">
-        {["help","about","skills","projects","contact","resume","matrix","cowsay hi","sudo","clear"].map(c => (
+        {["help", "about", "skills", "projects", "contact", "resume", "matrix", "cowsay hi", "sudo", "clear"].map(c => (
           <button key={c} onClick={() => run(c)}>{c}</button>
         ))}
       </div>
@@ -421,9 +421,9 @@ function TerminalSection() {
           <h2>./play.sh</h2>
           <span className="gujarati">// poke around</span>
         </div>
-        <div style={{position: "relative"}}>
-          <Sticker className="note pink" style={{top: -30, right: -10, transform: "rotate(6deg)", zIndex: 6}}>
-            try <b style={{color:"#4d8eff"}}>cowsay hi</b><br/>or <b style={{color:"#4d8eff"}}>matrix</b> 🟢
+        <div style={{ position: "relative" }}>
+          <Sticker className="note pink" style={{ top: -30, right: -10, transform: "rotate(6deg)", zIndex: 6 }}>
+            try <b style={{ color: "#4d8eff" }}>cowsay hi</b><br />or <b style={{ color: "#4d8eff" }}>matrix</b> 🟢
           </Sticker>
           <LiveTerminal />
         </div>
@@ -445,12 +445,12 @@ function Contact() {
         <div className="contact-grid">
           <div>
             <h3 className="contact-big">
-              Got a project,<br/>
-              a coffee idea,<br/>
-              or a <span className="blink">CI/CD nightmare</span>?<br/>
+              Got a project,<br />
+              a coffee idea,<br />
+              or a <span className="blink">CI/CD nightmare</span>?<br />
               Let's talk.
             </h3>
-            <div style={{fontFamily: "var(--font-mono)", color: "var(--ink-soft)", fontSize: 13, marginTop: 30}}>
+            <div style={{ fontFamily: "var(--font-mono)", color: "var(--ink-soft)", fontSize: 13, marginTop: 30 }}>
               <div>// status: ☕ caffeinated · 🟢 open to work</div>
               <div>// timezone: Gandhinagar, IN · GMT+5:30</div>
               <div>// usually replies within 24h</div>
@@ -506,11 +506,11 @@ function Footer() {
           <div>
             <div>// <b>built with</b> coffee, .NET docs, and questionable music</div>
             <div>// <b>shipped on</b> a custom HTML scrapbook</div>
-            <div>// <b>last commit</b> {new Date().toISOString().slice(0,10)}</div>
+            <div>// <b>last commit</b> {new Date().toISOString().slice(0, 10)}</div>
           </div>
-          <div style={{textAlign: "right"}}>
-            <small>© {new Date().getFullYear()} Mihir Vala · Gandhinagar, IN 🇮🇳</small><br/>
-            <small>press <kbd style={{background:"#222",padding:"1px 5px",borderRadius:3,border:"1px solid #444"}}>?</kbd> for shortcuts · konami code for surprise</small>
+          <div style={{ textAlign: "right" }}>
+            <small>© {new Date().getFullYear()} Mihir Vala · Gandhinagar, IN 🇮🇳</small><br />
+            <small>press <kbd style={{ background: "#222", padding: "1px 5px", borderRadius: 3, border: "1px solid #444" }}>?</kbd> for shortcuts · konami code for surprise</small>
           </div>
         </div>
       </div>
