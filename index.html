@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mihir Vala — Sr. Software Engineer</title>
+<meta name="description" content="Mihir Vala — Sr. Software Engineer. .NET Core, Docker, Azure DevOps. Gandhinagar, IN." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+Gujarati:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  /* font fallback: Gujarati word inherits Noto for proper rendering */
+  .gj, .gujarati { font-family: 'Noto Sans Gujarati','Space Grotesk',sans-serif !important; }
+
+  /* hide nav at very small */
+  @media (max-width: 600px) {
+    .nav-brand { display: none; }
+    .nav { padding: 4px; }
+    .nav a { padding: 6px 10px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== Top Nav ========== -->
+<nav class="nav">
+  <div class="nav-brand"><span class="dot"></span> mihir@portfolio:~</div>
+  <a href="#about">about</a>
+  <a href="#stack">stack</a>
+  <a href="#projects">projects</a>
+  <a href="#experience">experience</a>
+  <a href="#terminal">play</a>
+  <a class="cta" href="#contact">./connect</a>
+</nav>
+
+<!-- ========== App ========== -->
+<div id="app"></div>
+
+<!-- toast for easter eggs -->
+<div id="toast" class="toast"></div>
+
+<!-- ========== Scripts ========== -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="components-top.jsx"></script>
+<script type="text/babel" src="components-bottom.jsx"></script>
+
+<script type="text/babel">
+function App() {
+  return (
+    <>
+      <Hero />
+      <Marquee />
+      <About />
+      <Stack />
+      <Projects />
+      <Experience />
+      <TerminalSection />
+      <Contact />
+      <Footer />
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("app")).render(<App />);
+
+/* ---------- Easter eggs ---------- */
+const toast = document.getElementById("toast");
+function showToast(msg, ms = 3000) {
+  toast.innerHTML = msg;
+  toast.classList.add("show");
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => toast.classList.remove("show"), ms);
+}
+
+// Konami: ↑ ↑ ↓ ↓ ← → ← → b a
+const KONAMI = ["ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft","ArrowRight","ArrowLeft","ArrowRight","b","a"];
+let kbuf = [];
+window.addEventListener("keydown", (e) => {
+  kbuf.push(e.key);
+  if (kbuf.length > KONAMI.length) kbuf.shift();
+  if (kbuf.join(",") === KONAMI.join(",")) {
+    document.body.style.transition = "filter 0.4s";
+    document.body.style.filter = "hue-rotate(180deg) saturate(1.4)";
+    showToast(`<span class="k">⚡ KONAMI UNLOCKED</span> &nbsp;You found a backend dev's secret. 🎮`, 5000);
+    setTimeout(() => { document.body.style.filter = ""; }, 5000);
+    kbuf = [];
+  }
+
+  // ? for help hint
+  if (e.key === "?" && !e.target.matches("input, textarea")) {
+    showToast(`<span class="k">tip:</span> scroll down to <b>./play.sh</b> for the live terminal`);
+  }
+});
+
+/* ---------- Console flex ---------- */
+const css1 = "color:#4d8eff;font-family:JetBrains Mono;font-size:13px;font-weight:600";
+const css2 = "color:#3fb950;font-family:JetBrains Mono;font-size:11px";
+console.log("%cHey, fellow dev 👋", css1);
+console.log("%cInspecting elements, are we?", css2);
+console.log("%cType `help` in the play.sh terminal on the page.", css2);
+console.log("%cOr try the Konami code: ↑↑↓↓←→←→ba", css2);
+
+/* ---------- Smooth scroll for nav ---------- */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener("click", (e) => {
+    const id = a.getAttribute("href").slice(1);
+    const el = document.getElementById(id);
+    if (el) {
+      e.preventDefault();
+      window.scrollTo({ top: el.offsetTop - 60, behavior: "smooth" });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
