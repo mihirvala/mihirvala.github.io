@@ -499,7 +499,7 @@ function Contact() {
               <div className="what"><b>+91 90334 88140</b><span>only for emergencies & friends</span></div>
               <span className="arr">→</span>
             </a>
-            <a className="contact-link" href="assets/Mihir-Vala-Resume.pdf" download>
+            <a className="contact-link" href="assets/Mihir-Resume.pdf" download>
               <span className="glyph">PDF</span>
               <div className="what"><b>Resume.pdf</b><span>the formal version</span></div>
               <span className="arr">↓</span>
