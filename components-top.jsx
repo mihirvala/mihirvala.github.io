@@ -153,11 +153,14 @@ function Draggable({ children, style, hint, className = "" }) {
   const [pos, setPos] = React.useState({ x: 0, y: 0 });
   const [dragging, setDragging] = React.useState(false);
   const startRef = React.useRef({ x: 0, y: 0, px: 0, py: 0 });
+  const didDragRef = React.useRef(false);
 
   const onDown = (e) => {
     if (e.target.tagName === "A" || e.target.tagName === "BUTTON" || e.target.tagName === "INPUT") return;
-    e.preventDefault();
+    // only preventDefault on mouse (not touch) — touch preventDefault kills synthetic click
+    if (!e.touches) e.preventDefault();
     const t = e.touches ? e.touches[0] : e;
+    didDragRef.current = false;
     setDragging(true);
     startRef.current = { x: t.clientX, y: t.clientY, px: pos.x, py: pos.y };
   };
@@ -167,12 +170,14 @@ function Draggable({ children, style, hint, className = "" }) {
       const t = e.touches ? e.touches[0] : e;
       const dx = t.clientX - startRef.current.x;
       const dy = t.clientY - startRef.current.y;
+      // mark as a real drag if moved more than 8px
+      if (Math.abs(dx) > 8 || Math.abs(dy) > 8) didDragRef.current = true;
       setPos({ x: startRef.current.px + dx, y: startRef.current.py + dy });
     };
     const onUp = () => setDragging(false);
     window.addEventListener("mousemove", onMove);
     window.addEventListener("mouseup", onUp);
-    window.addEventListener("touchmove", onMove);
+    window.addEventListener("touchmove", onMove, { passive: true });
     window.addEventListener("touchend", onUp);
     return () => {
       window.removeEventListener("mousemove", onMove);
@@ -181,6 +186,14 @@ function Draggable({ children, style, hint, className = "" }) {
       window.removeEventListener("touchend", onUp);
     };
   }, [dragging]);
+
+  // suppress click events that follow a real drag
+  const onClick = (e) => {
+    if (didDragRef.current) {
+      e.stopPropagation();
+      didDragRef.current = false;
+    }
+  };
 
   const baseTransform = (style && style.transform) || "";
   const merged = {
@@ -191,7 +204,7 @@ function Draggable({ children, style, hint, className = "" }) {
   };
 
   return (
-    <div className={"prop " + className} style={merged} onMouseDown={onDown} onTouchStart={onDown}>
+    <div className={"prop " + className} style={merged} onMouseDown={onDown} onTouchStart={onDown} onClickCapture={onClick}>
       {children}
       {hint && <span className="label">{hint}</span>}
     </div>
@@ -267,7 +280,6 @@ function Ticket() {
 function Vinyl() {
   const [playing, setPlaying] = React.useState(false);
   const audioRef = React.useRef(null);
-  const clickRef = React.useRef({ x: 0, y: 0 });
 
   // create audio element once & autoplay
   React.useEffect(() => {
@@ -320,23 +332,8 @@ function Vinyl() {
     setPlaying(!playing);
   };
 
-  const onPointerDown = (e) => {
-    e.stopPropagation();
-    const t = e.touches ? e.touches[0] : e;
-    clickRef.current = { x: t.clientX, y: t.clientY, time: Date.now() };
-  };
-
-  const onPointerUp = (e) => {
-    e.stopPropagation();
-    const t = e.changedTouches ? e.changedTouches[0] : e;
-    const dx = Math.abs(t.clientX - clickRef.current.x);
-    const dy = Math.abs(t.clientY - clickRef.current.y);
-    const dt = Date.now() - (clickRef.current.time || 0);
-    if (dx < 15 && dy < 15 && dt < 500) toggle();
-  };
-
   return (
-    <div className="prop-vinyl-wrap" onMouseDown={onPointerDown} onMouseUp={onPointerUp} onTouchStart={onPointerDown} onTouchEnd={onPointerUp} style={{ cursor: "pointer" }}>
+    <div className="prop-vinyl-wrap" onClick={toggle} style={{ cursor: "pointer" }}>
       <div className={"prop-vinyl-disc" + (playing ? " spinning" : "")}>
         {/* grooves */}
         <div className="groove g1"></div>
