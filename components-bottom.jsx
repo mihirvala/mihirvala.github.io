@@ -224,6 +224,9 @@ const HELP = [
   "  social       — github / linkedin / email",
   "  whoami       — quick fact",
   "  date         — current time",
+  "  play         — play music ♫",
+  "  stop music   — stop music ♫",
+  "  pause        — pause music ♫",
   "  cowsay <msg> — make a cow say something",
   "  sudo         — try it 😏",
   "  matrix       — engage hacker mode",
@@ -337,13 +340,32 @@ function LiveTerminal() {
       setInput("");
       return;
     }
-    const [base, ...rest] = cmd.split(/\s+/);
-    const fn = COMMANDS[base.toLowerCase()];
+
+    // check for music commands first (multi-word)
+    const lower = cmd.toLowerCase();
     let lines;
-    if (fn) {
-      lines = fn(rest.join(" "), setMatrix);
+    if (lower === "stop music" || lower === "pause music" || lower === "music stop" || lower === "pause") {
+      if (window.__musicControl) {
+        window.__musicControl.pause();
+        lines = ["♫ music stopped"];
+      } else {
+        lines = ["no music player found — scroll up to the vinyl disc"];
+      }
+    } else if (lower === "play" || lower === "play music" || lower === "music play" || lower === "start music") {
+      if (window.__musicControl) {
+        window.__musicControl.play();
+        lines = ["♫ music playing"];
+      } else {
+        lines = ["no music player found — scroll up to the vinyl disc"];
+      }
     } else {
-      lines = [`zsh: command not found: ${base}`, `try 'help' for a list.`];
+      const [base, ...rest] = cmd.split(/\s+/);
+      const fn = COMMANDS[base.toLowerCase()];
+      if (fn) {
+        lines = fn(rest.join(" "), setMatrix);
+      } else {
+        lines = [`zsh: command not found: ${base}`, `try 'help' for a list.`];
+      }
     }
     setHistory([...newHist, ...lines.map(l => ({ type: "out", text: l }))]);
     setHist([cmd, ...hist]);

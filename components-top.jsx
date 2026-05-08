@@ -321,15 +321,18 @@ function Vinyl() {
   };
 
   const onPointerDown = (e) => {
+    e.stopPropagation();
     const t = e.touches ? e.touches[0] : e;
-    clickRef.current = { x: t.clientX, y: t.clientY };
+    clickRef.current = { x: t.clientX, y: t.clientY, time: Date.now() };
   };
 
   const onPointerUp = (e) => {
+    e.stopPropagation();
     const t = e.changedTouches ? e.changedTouches[0] : e;
     const dx = Math.abs(t.clientX - clickRef.current.x);
     const dy = Math.abs(t.clientY - clickRef.current.y);
-    if (dx < 5 && dy < 5) toggle();
+    const dt = Date.now() - (clickRef.current.time || 0);
+    if (dx < 15 && dy < 15 && dt < 500) toggle();
   };
 
   return (
