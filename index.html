@@ -28,11 +28,22 @@
 
       .nav {
         padding: 4px;
+        max-width: calc(100vw - 20px);
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        justify-content: flex-start;
+      }
+
+      .nav::-webkit-scrollbar {
+        display: none;
       }
 
       .nav a {
         padding: 6px 10px;
         font-size: 12px;
+        white-space: nowrap;
+        flex-shrink: 0;
       }
     }
   </style>

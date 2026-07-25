@@ -2,6 +2,22 @@
 
 const PROJECTS = [
   {
+    id: "appbuilder",
+    initials: "AB",
+    cap: "AppBuilder ⚙️",
+    photoCls: "appbuilder",
+    label: "GEN · 2026",
+    title: "AppBuilder",
+    role: "Config-driven app generator",
+    chips: [".NET / Node", "React", "SQL / PostgreSQL", "Codegen"],
+    bullets: [
+      "Built the configuration flow that drives the whole generation pipeline",
+      "Dynamically scaffolds a full client app from the selected stack",
+      "Backend: .NET or Node · Frontend: React · Database: SQL or PostgreSQL",
+      "Turns a config into a ready-to-run project instead of manual boilerplate",
+    ],
+  },
+  {
     id: "bolt-spec",
     initials: "BS",
     cap: "Bolt-Spec ⚡",

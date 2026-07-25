@@ -1703,6 +1703,10 @@ section {
   background: linear-gradient(135deg, #56d4dd 0%, #0891b2 100%);
 }
 
+.polaroid .photo.appbuilder {
+  background: linear-gradient(135deg, #ff6b5b 0%, #d97a1f 100%);
+}
+
 .polaroid .photo .badge {
   position: absolute;
   top: 12px;
@@ -2123,4 +2127,111 @@ section {
 
 .toast .k {
   color: var(--c-amber);
+}
+
+/* ============================================================
+   Mobile responsive overrides (phones, e.g. iPhone 13 mini 375px)
+   ============================================================ */
+@media (max-width: 640px) {
+
+  .wrap {
+    padding: 0 20px;
+  }
+
+  section {
+    padding: 56px 0;
+  }
+
+  /* ---- hero: turn the absolute-positioned scrapbook into a
+     centered, wrapping stack instead of scattered/overlapping props ---- */
+  .hero {
+    padding: 96px 0 30px;
+    min-height: 0;
+  }
+
+  .hero-stage {
+    height: auto;
+    min-height: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 18px 14px;
+    padding: 10px 0 20px;
+  }
+
+  .hero-center {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-bottom: 6px;
+  }
+
+  .hero-center .name {
+    font-size: clamp(46px, 16vw, 90px);
+  }
+
+  .hero-center .tagline {
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+  }
+
+  /* take every draggable prop out of absolute flow so it wraps
+     naturally in the flex grid above instead of overlapping */
+  .prop {
+    position: static;
+  }
+
+  .prop .label {
+    display: none;
+  }
+
+  .prop-badge .strap {
+    display: none;
+  }
+
+  .prop-miniterm {
+    width: min(280px, 84vw);
+  }
+
+  /* ---- about ---- */
+  .bio {
+    font-size: 18px;
+  }
+
+  /* ---- projects bulletin board ---- */
+  .bulletin {
+    padding: 30px 16px;
+    min-height: 0;
+  }
+
+  /* ---- experience timeline (desktop reserves a wide left gutter
+     for the sha label via an inline style — collapse it here) ---- */
+  .timeline {
+    margin-left: 8px !important;
+  }
+
+  .timeline .git-log {
+    display: none;
+  }
+
+  .timeline-item h4 {
+    font-size: 19px;
+  }
+
+  /* ---- live terminal ---- */
+  .live-term-body {
+    min-height: 260px;
+    max-height: 360px;
+  }
+
+  /* ---- contact ---- */
+  .contact-big {
+    font-size: clamp(28px, 9vw, 44px);
+  }
+
+  /* ---- footer: fixed-width ASCII art always overflows a phone width ---- */
+  .foot .ascii {
+    display: none;
+  }
 }
