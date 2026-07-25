@@ -2,7 +2,7 @@
 
 const TYPING_LINES = [
   { c: "whoami", out: "Full Stack Engineer · 4 yrs · ASP.NET Core · React.js" },
-  { c: "cat skills", out: ".NET Core · React.js · Docker · Azure DevOps · CQRS" },
+  { c: "cat skills", out: ".NET Core · React.js · Docker · Azure DevOps · Azure Cloud · CQRS" },
   { c: "git log -1", out: "feat(cart-sync): Amazon SP-API + Shopify GraphQL sync" },
   { c: "echo $TAGLINE", out: "I ship clean code, not just commits." },
 ];
@@ -799,7 +799,7 @@ function Hero() {
 function Marquee() {
   const items = [
     "ASP.NET Core", "React.js", "AngularJS", "PostgreSQL", "SQL", "Docker", "Automation",
-    "Code Generation", "AI-Assisted Development", "Azure DevOps", "CI/CD",
+    "Code Generation", "AI-Assisted Development", "Azure DevOps", "Azure Cloud", "CI/CD",
     "Clean Architecture", "CQRS", "Entity Framework", "Amazon SP-API", "Shopify GraphQL"
   ];
   return (
@@ -874,7 +874,7 @@ function About() {
 const STACK = [
   { name: "Languages & Frameworks", icon: "</>", color: "#4d8eff", tags: ["C#", ".NET Core", "React.js", "JavaScript", "AngularJS"] },
   { name: "Database & ORM", icon: "DB", color: "#3fb950", tags: ["SQL Server", "PostgreSQL", "EF Core", "Dapper", "Stored Procs"] },
-  { name: "DevOps & CI/CD", icon: "⚙", color: "#f0a72b", tags: ["Azure DevOps", "Docker", "PowerShell", "IIS", "Git", "GitHub"] },
+  { name: "DevOps & CI/CD", icon: "⚙", color: "#f0a72b", tags: ["Azure DevOps", "Azure Cloud", "Docker", "PowerShell", "IIS", "Git", "GitHub"] },
   { name: "Architecture", icon: "▲", color: "#b392f0", tags: ["Clean Arch", "CQRS", "Repository", "SOLID", "DI"] },
   { name: "Testing", icon: "✓", color: "#56d4dd", tags: ["XUnit", "NUnit", "MSTest", "Integration"] },
   { name: "Auth & Security", icon: "🔐", color: "#ff7b9c", tags: ["JWT", "Refresh tokens", "OTP flows", "SMTP"] },

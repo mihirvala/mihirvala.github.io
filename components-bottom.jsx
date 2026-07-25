@@ -261,7 +261,7 @@ const COMMANDS = {
   skills: () => [
     "C#, .NET Core, React.js, JavaScript, AngularJS",
     "SQL Server, PostgreSQL, EF Core, Dapper",
-    "Azure DevOps, Docker, PowerShell, IIS",
+    "Azure DevOps, Azure Cloud, Docker, PowerShell, IIS",
     "Amazon SP-API, Shopify GraphQL/REST",
     "Clean Architecture, CQRS, SOLID, DI",
     "XUnit, NUnit, MSTest",
