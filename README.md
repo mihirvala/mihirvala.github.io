@@ -28,7 +28,7 @@
 │   📍  REGION     │  Gandhinagar, Gujarat, India 🇮🇳                │
 │   🏰  CURRENT    │  Vagaro · Ahmedabad  (Aug 2026 → Present)      │
 │   🗺️  PAST       │  Tech Ahir → Codzgarage → Microvista          │
-│   🎓  ORIGIN     │  BCA · Kadi University · 7.03 CPI · 2021       │
+│   🎓  ORIGIN     │  BCA · Kadi University · First Class · 2021    │
 │   🟢  STATUS     │  Open to Work · GMT+5:30 · Replies in 24h      │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
@@ -221,7 +221,7 @@ Financial market compliance automation for NSE and BSE regulatory submissions.
 │  └─ Automated multiple manual financial report types
 │
 ● init     November 2021
-   BCA · Kadi University · Gandhinagar · 7.03 CPI
+   BCA · Kadi University · Gandhinagar · First Class
    └─ First commit. Fell in love with C# and never looked back.
 ```
 

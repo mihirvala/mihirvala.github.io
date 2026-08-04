@@ -206,7 +206,7 @@ const JOBS = [
   {
     when: "Nov 2021",
     role: "Bachelor of Computer Applications",
-    where: "Kadi University, Gandhinagar · 7.03 CPI",
+    where: "Kadi University, Gandhinagar · First Class",
     sha: "init",
     bullets: ["First commit. Fell in love with C# and never looked back."],
   },
@@ -291,7 +291,7 @@ const COMMANDS = {
     "May 2025 — Jul 2026   Sr. Software Engineer · Tech Ahir",
     "June 2023 — Apr 2025  Jr. Software Engineer · Codzgarage",
     "June 2022 — May 2023   Jr. Software Engineer · Microvista",
-    "Nov 2021          BCA · Kadi University · 7.03 CPI",
+    "Nov 2021          BCA · Kadi University · First Class",
   ],
   contact: () => [
     "email     mihirvala86@gmail.com",

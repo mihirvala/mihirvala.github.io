@@ -732,7 +732,7 @@ function Hero() {
           </Draggable>
 
           {/* polaroid: BCA */}
-          <Draggable style={{ bottom: 20, left: "26%", transform: "rotate(-4deg)" }} hint="Kadi University · 7.03 CPI">
+          <Draggable style={{ bottom: 20, left: "26%", transform: "rotate(-4deg)" }} hint="Kadi University · First Class">
             <MiniPolaroid initials="BCA" color="linear-gradient(135deg, #4d8eff, #b392f0)" cap="BCA · '21" />
           </Draggable>
 
