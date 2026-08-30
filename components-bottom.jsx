@@ -157,23 +157,11 @@ function Projects() {
 
 const JOBS = [
   {
-    when: "Aug 2026 — Present",
-    role: "Full Stack Engineer (AI First)",
-    where: "Vagaro · Ahmedabad",
-    sha: "e1d9f47",
-    now: true,
-    bullets: [
-      "Build dynamic frontend/backend interfaces using React.js and integrated with .NET Core REST APIs across client projects.",
-      "Automate IIS deployments via PowerShell — single-click publishing with HTTPS binding & parallel project deploys (~90% manual time saved).",
-      "Design and run CI/CD on both Azure DevOps and GitHub Actions — Docker containerization, image builds, env config, and multi-stage releases.",
-      "Enforce CQRS, dependency injection, and structured Git branching strategies for maintainability.",
-    ],
-  },
-  {
-    when: "May 2025 — Jul 2026",
+    when: "May 2025 — Present",
     role: "Sr. Software Engineer",
     where: "Tech Ahir Pvt Ltd · Gandhinagar",
     sha: "a4f3c2b",
+    now: true,
     bullets: [
       "Build dynamic frontend/backend interfaces using React.js and integrated with .NET Core REST APIs across client projects.",
       "Automate IIS deployments via PowerShell — single-click publishing with HTTPS binding & parallel project deploys (~90% manual time saved).",
@@ -265,7 +253,7 @@ const HELP = [
 const COMMANDS = {
   about: () => [
     "Mihir Vala · Gandhinagar, Gujarat",
-    "Full Stack Engineer (AI First) @ Vagaro",
+    "Full Stack Engineer @ Tech Ahir Pvt Ltd",
     "4 years building scalable .NET Core APIs & React.js frontends.",
     "Likes: clean code, CI/CD, API integrations (Amazon, Shopify).",
     "Dislikes: 100-line if-else chains.",
@@ -273,7 +261,7 @@ const COMMANDS = {
   skills: () => [
     "C#, .NET Core, React.js, JavaScript, AngularJS",
     "SQL Server, PostgreSQL, EF Core, Dapper",
-    "Azure DevOps, GitHub Actions, Azure Cloud, Docker, PowerShell, IIS",
+    "Azure DevOps, Azure Cloud, Docker, PowerShell, IIS",
     "Amazon SP-API, Shopify GraphQL/REST",
     "Clean Architecture, CQRS, SOLID, DI",
     "XUnit, NUnit, MSTest",
@@ -287,8 +275,7 @@ const COMMANDS = {
     "→ Scroll up to the projects section for details.",
   ],
   experience: () => [
-    "Aug 2026 — Now    Full Stack Engineer (AI First) · Vagaro",
-    "May 2025 — Jul 2026   Sr. Software Engineer · Tech Ahir",
+    "May 2025 — Now    Sr. Software Engineer · Tech Ahir",
     "June 2023 — Apr 2025  Jr. Software Engineer · Codzgarage",
     "June 2022 — May 2023   Jr. Software Engineer · Microvista",
     "Nov 2021          BCA · Kadi University · First Class",

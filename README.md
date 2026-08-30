@@ -23,12 +23,12 @@
 ┌────────────────────────────────────────────────────────────────────┐
 │                                                                    │
 │   👤  NAME       │  Mihir Vala                                    │
-│   🏷️  CLASS      │  Full Stack Engineer (AI First)                │
+│   🏷️  CLASS      │  Full Stack Engineer                           │
 │   ⚡  LEVEL      │  Senior · 4 Years in the Field                 │
 │   📍  REGION     │  Gandhinagar, Gujarat, India 🇮🇳                │
-│   🏰  CURRENT    │  Vagaro · Ahmedabad  (Aug 2026 → Present)      │
-│   🗺️  PAST       │  Tech Ahir → Codzgarage → Microvista          │
-│   🎓  ORIGIN     │  BCA · Kadi University · First Class · 2021    │
+│   🏰  CURRENT    │  Tech Ahir Pvt Ltd  (May 2025 → Present)       │
+│   🗺️  PAST       │  Codzgarage Infotech  →  Microvista Technology │
+│   🎓  ORIGIN     │  BCA · Kadi University · 7.03 CPI · 2021       │
 │   🟢  STATUS     │  Open to Work · GMT+5:30 · Replies in 24h      │
 │                                                                    │
 └────────────────────────────────────────────────────────────────────┘
@@ -62,9 +62,7 @@ The journey began at **Microvista Technology**, where a junior engineer tamed th
 
 His power grew at **Codzgarage Infotech**, where he forged battle-hardened systems: JWT auth flows with refresh tokens, OTP-encrypted file pipelines, SMTP notification engines, and a Leave Management System with automated task reassignment. He also summoned inter-dimensional portals connecting **Amazon SP-API** and **Shopify GraphQL** for real-time product sync across e-commerce realms.
 
-At **Tech Ahir**, he commanded React frontends, architected Azure DevOps multi-stage pipelines with Docker containerization, and conjured PowerShell spells that turned 4-hour deploy rituals into single-click ceremonies — saving ~90% manual time.
-
-Now at **Vagaro**, he builds full-stack, AI-first features — wielding both Azure DevOps and GitHub Actions to ship containerized releases end to end.
+Now at **Tech Ahir**, he commands React frontends, architects Azure DevOps multi-stage pipelines with Docker containerization, and conjures PowerShell spells that turn 4-hour deploy rituals into single-click ceremonies — saving ~90% manual time.
 
 **His three sacred principles:**
 > *"Boring code, exciting outcomes."*
@@ -194,14 +192,7 @@ Financial market compliance automation for NSE and BSE regulatory submissions.
 ## 🗂️ EXPERIENCE TIMELINE — `git log --all`
 
 ```
-● e1d9f47  Aug 2026 — Present
-│  Full Stack Engineer (AI First) · Vagaro · Ahmedabad
-│  ├─ React.js frontends + .NET Core REST APIs across client projects
-│  ├─ PowerShell IIS deploy automation → ~90% manual time saved
-│  ├─ CI/CD on Azure DevOps + GitHub Actions with Docker multi-stage releases
-│  └─ CQRS, DI, structured Git branching across all projects
-│
-● a4f3c2b  May 2025 — July 2026
+● a4f3c2b  May 2025 — Present
 │  Sr. Software Engineer · Tech Ahir Pvt Ltd · Gandhinagar
 │  ├─ React.js frontends + .NET Core REST APIs across client projects
 │  ├─ PowerShell IIS deploy automation → ~90% manual time saved

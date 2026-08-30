@@ -746,9 +746,9 @@ function Hero() {
             <UsbCable />
           </Draggable>
 
-          {/* polaroid: Vagaro */}
-          <Draggable style={{ bottom: 10, right: "5%", transform: "rotate(3deg)" }} hint="now @ Vagaro">
-            <MiniPolaroid initials="VG" color="linear-gradient(135deg, #3fb950, #2d7a3d)" cap="@ Vagaro 🟢" />
+          {/* polaroid: Tech Ahir */}
+          <Draggable style={{ bottom: 10, right: "5%", transform: "rotate(3deg)" }} hint="now @ Tech Ahir">
+            <MiniPolaroid initials="TA" color="linear-gradient(135deg, #3fb950, #2d7a3d)" cap="@ Tech Ahir 🟢" />
           </Draggable>
 
           {/* git commit hash */}
@@ -833,10 +833,9 @@ function About() {
               </p>
               <p>
                 I started at <b>Microvista</b> automating financial compliance reports,
-                grew at <b>Codzgarage</b> shipping JWT auth, encrypted file workflows, a Leave
-                Management System, and third-party API integrations like Amazon SP-API and Shopify,
-                sharpened it at <b>Tech Ahir</b> building React interfaces and Azure DevOps pipelines,
-                and now I'm at <b>Vagaro</b> shipping full-stack, AI-first features.
+                grew at <b>Codzgarage</b> shipping JWT auth, encrypted file workflows,
+                and a Leave Management System, and now I'm at <b>Tech Ahir</b> building React interfaces,
+                designing Azure DevOps pipelines, and integrating third-party APIs like Amazon SP-API and Shopify.
               </p>
               <p>
                 Outside work: late-night terminal sessions, mechanical keyboards,
@@ -875,7 +874,7 @@ function About() {
 const STACK = [
   { name: "Languages & Frameworks", icon: "</>", color: "#4d8eff", tags: ["C#", ".NET Core", "React.js", "JavaScript", "AngularJS"] },
   { name: "Database & ORM", icon: "DB", color: "#3fb950", tags: ["SQL Server", "PostgreSQL", "EF Core", "Dapper", "Stored Procs"] },
-  { name: "DevOps & CI/CD", icon: "⚙", color: "#f0a72b", tags: ["Azure DevOps", "GitHub Actions", "Azure Cloud", "Docker", "PowerShell", "IIS", "Git", "GitHub"] },
+  { name: "DevOps & CI/CD", icon: "⚙", color: "#f0a72b", tags: ["Azure DevOps", "Azure Cloud", "Docker", "PowerShell", "IIS", "Git", "GitHub"] },
   { name: "Architecture", icon: "▲", color: "#b392f0", tags: ["Clean Arch", "CQRS", "Repository", "SOLID", "DI"] },
   { name: "Testing", icon: "✓", color: "#56d4dd", tags: ["XUnit", "NUnit", "MSTest", "Integration"] },
   { name: "Auth & Security", icon: "🔐", color: "#ff7b9c", tags: ["JWT", "Refresh tokens", "OTP flows", "SMTP"] },
